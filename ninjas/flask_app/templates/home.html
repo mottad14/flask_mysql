@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>hello world</H1>
+
+    <form action="/createNinja" method="post">
+        <input type="text" name="name" placeholder="name" >
+        <input type="text" name="hometown" placeholder="hometown">
+        <input type="text" name="level" placeholder="level">
+        <input type="submit" value="add ninja">
+    </form>
+
+    {{all_ninjas}}
+    {% for ninja in all_ninjas %}
+    <h1>____________________________________</h1>
+    <p> id: {{ninja.id}} {{ninja['id']}}</p>
+        <p> name: {{ninja.name}} {{ninja['name']}}</p>
+        <p> level: {{ninja.level}}</p>
+        <p> hometown: {{ninja.hometown}}</p>
+        <p> created_at: {{ninja.created_at}}</p>
+    {% endfor %}
+</body>
+</html>
